@@ -1,0 +1,5 @@
+#!/bin/bash
+# Start both the server and the manual user button processor
+# If you don't have a button in your implementation, remove the first line
+sudo python /home/pi/coffee/processButton.py &
+sudo python /home/pi/coffee/webserver.py &

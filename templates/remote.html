@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+<script>
+function remoteOperation(inputID)
+{
+  $.ajax({
+            type: "GET",
+            url: $SCRIPT_ROOT + "/remoteOpReq/",
+            contentType: "application/json; charset=utf-8",
+            data: { remoteOp: inputID },
+            success: function(data) {
+                $('#statusLine').text(data.value);
+            }
+        });     
+}
+</script>
+
+</head>
+{% endblock %}
+
+{% block onload %}  onload="remoteOperation('getCurrentState')" {% endblock %} 
+
+{% block body %}
+    <h2>Jake's Coffee House</h2>
+    <p><input type="image" id="startBrew"  src="{{ url_for('static',filename="coffeeCup.jpg")}}"  onclick="remoteOperation(this.id)"></p>
+
+    <div class="container">
+          <div class="col-sm-9">
+               <p><button class="btn btn-lg btn-danger" id="shutOff" onclick="remoteOperation(this.id)">Power Off</button></p>  
+               <p><button class="btn btn-lg btn-info" id="getCurrentState" onclick="remoteOperation(this.id)">Status</button></p>
+          </div>
+    </div>
+
+   <br><br>
+   <div class="fa-2x col-sm-9  status-bg"  id="statusLine"></div>
+ 
+{% endblock %}
+
