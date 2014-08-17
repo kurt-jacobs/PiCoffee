@@ -1,4 +1,4 @@
-coffee (a Raspberry Pi web server for controling your coffee pot)
+PiCoffee (a Raspberry Pi web server for controling your coffee pot)
 ======
 This is a Raspberry Pi web server that allows a user to start/stop a coffee maker remotely.  By starting the brew in bed,
 the time to the vital first cup is greatly reduced.
