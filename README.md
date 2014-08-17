@@ -4,7 +4,7 @@ This is a Raspberry Pi web server that allows a user to start/stop a coffee make
 the time to the vital first cup is greatly reduced.
 
 
-
+<pre>
 Installing GPIO
 sudo apt-get update
 sudo apt-get -y install python-rpi.gpio
@@ -17,3 +17,4 @@ To install flask you need to install pip. You can install it using the following
 sudo apt-get install python-pip
 To install flask use the following command.
 sudo pip install flask
+</pre>
